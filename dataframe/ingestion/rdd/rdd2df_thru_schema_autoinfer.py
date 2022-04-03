@@ -50,4 +50,6 @@ if __name__ == '__main__':
     txnDfWithColName.printSchema()
     txnDfWithColName.show(5, False)
 
+    txnDfNoColNames2.write.csv("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/txn_fct_out")
+
 # spark-submit --packages "org.apache.hadoop:hadoop-aws:2.7.4" dataframe/ingestion/rdd/rdd2df_thru_schema_autoinfer.py
